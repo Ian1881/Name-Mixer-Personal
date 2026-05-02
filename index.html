@@ -12,13 +12,19 @@
         <div class="hero-copy">
           <p class="eyebrow">Name Mixer</p>
           <h1>Mix names from a list</h1>
-          <p>Paste one name per line, then click mix to generate a shuffled list of names.</p>
+          <p>
+            Paste one name per line, then click mix to generate a shuffled list
+            of names.
+          </p>
         </div>
 
         <div class="hero-card">
           <label class="input-label" for="names-input">Enter names</label>
           <div class="input-square">
-            <textarea id="names-input" placeholder="One name per line"></textarea>
+            <textarea
+              id="names-input"
+              placeholder="One name per line"
+            ></textarea>
           </div>
           <div class="button-row">
             <button id="mix-btn" type="button">Mix Names</button>
@@ -32,6 +38,7 @@
           <div class="output-header">
             <h2>Mixed Output</h2>
             <p class="output-note">Your mixed names will appear here.</p>
+            <button id="copy-btn" type="button">Copy to Clipboard</button>
           </div>
           <ol id="mixed-list" class="mixed-list" aria-live="polite"></ol>
         </section>
