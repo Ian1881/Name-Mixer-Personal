@@ -3,6 +3,7 @@ const el = {
   mixBtn: document.querySelector('#mix-btn'),
   clearBtn: document.querySelector('#clear-btn'),
   result: document.querySelector('#mixed-list'),
+  copyBtn: document.querySelector('#copy-btn'),
 };
 
 function getNamesArray() {
@@ -83,3 +84,24 @@ el.clearBtn.addEventListener('click', () => {
   el.namesInput.value = '';
   el.result.innerHTML = '';
 });
+
+async function copyToClipboard() {
+  const listItems = el.result.querySelectorAll('li');
+
+  const textToCopy = Array.from(listItems)
+    .map(li => li.textContent)
+    .join('\n');
+
+  if (!textToCopy) return;
+
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+
+    const originalText = el.copyBtn.textContent;
+    el.copyBtn.textContent = 'Copied!';
+    setTimeout(() => (el.copyBtn.textContent = originalText), 2000);
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+  }
+}
+el.copyBtn.addEventListener('click', copyToClipboard);
