@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name Mixer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Name Mixer</p>
+          <h1>Mix names from a list</h1>
+          <p>Paste one name per line, then click mix to generate a shuffled list of names.</p>
+        </div>
+
+        <div class="hero-card">
+          <label class="input-label" for="names-input">Enter names</label>
+          <div class="input-square">
+            <textarea id="names-input" placeholder="One name per line"></textarea>
+          </div>
+          <div class="button-row">
+            <button id="mix-btn" type="button">Mix Names</button>
+            <button id="clear-btn" type="button">Clear</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="result-panel">
+        <section class="output-card">
+          <div class="output-header">
+            <h2>Mixed Output</h2>
+            <p class="output-note">Your mixed names will appear here.</p>
+          </div>
+          <ol id="mixed-list" class="mixed-list" aria-live="polite"></ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
