@@ -1,2 +1,2 @@
 # Name-Mixer-Personal-
-Basic app to mix names
+Basic app to mix names based off inputs
